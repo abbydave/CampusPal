@@ -1,0 +1,107 @@
+[
+  {
+    "section": "Knowledge Brain (RAG)",
+    "prompts": [
+      {
+        "id": "rag_1",
+        "user_prompt": "Why can't I register my courses?",
+        "computer_response": "I checked your portal and the issue is that you haven't met the minimum fee payment requirement. UNILAG requires you to pay at least ₦70,000 out of your total fee of ₦145,000 before course registration is enabled. Once you make that payment and it reflects on the portal, the registration page will unlock automatically. Would you like me to guide you through the payment process?",
+        "computer_task": null
+      },
+      {
+        "id": "rag_3",
+        "user_prompt": "Do I need to do all my compulsory courses now, or is it possible I do one of them later?",
+        "computer_response": "No, you do not have to register all your compulsory courses in one semester. Since you are on a 5-year programme, UNILAG gives you a maximum span of 7 years to complete your degree. This means you have the flexibility to spread your compulsory courses across semesters as long as you complete all of them before your final year clearance. Just make sure you're not pushing too many to your final semesters — that can create unnecessary pressure. Would you like me to help you plan which ones to prioritize?",
+        "computer_task": null
+      },
+      {
+        "id": "rag_4",
+        "user_prompt": "What is the minimum unit I can register for this semester?",
+        "computer_response": "The minimum credit load you can register per semester is 16 units. However, since you are in your final year, you have some flexibility — you are allowed to register only the courses you need to graduate, even if that total falls below 16 units. So if you only have, say, 12 units of courses left to complete your degree, you can register just those 12. Would you like me to check your outstanding courses and figure out exactly what you need?",
+        "computer_task": null
+      }
+    ]
+  },
+  {
+    "section": "CGPA Simulator",
+    "prompts": [
+      {
+        "id": "cgpa_1",
+        "user_prompt": "Is it possible to get first class with the current GP I have?",
+        "computer_response": "Yes, a first class is still within reach! Here's a breakdown:\n\n📊 Your current standing:\n• Units completed: 108\n• Current CGPA: 4.42\n• Total quality points so far: 477.36\n\n🎯 What you need:\n• Remaining units: 36\n• First class requirement: 4.50 CGPA\n• You need at least 171 quality points from your remaining 36 units (an average GP of 4.75)\n\n✅ The good news:\n• If you score all A's, you'll finish with a 4.57 CGPA — comfortably first class.\n• You can even afford 3 B's in 3-unit courses (9 units of B's) and still finish with a 4.50 CGPA.\n\nSo yes — there is room for a few slips, but not many. Focus on your high-unit courses. Would you like me to simulate specific scenarios for you?",
+        "computer_task": null
+      },
+      {
+        "id": "cgpa_2",
+        "user_prompt": "If I don't do a compulsory course, does it mean automatic carryover?",
+        "computer_response": "No, it does not mean an automatic carryover. A carryover only happens when you register for a course and then fail it (score below 40). If you simply haven't registered for a compulsory course yet, it remains an outstanding course — you still need to take it before you can graduate, but it won't appear as a failed course or negatively affect your CGPA. You can register for it in a later semester. Just make sure all compulsory courses are completed before your final clearance.",
+        "computer_task": null
+      },
+      {
+        "id": "cgpa_3",
+        "user_prompt": "If I fail a course or carryover a course, can I still get first class?",
+        "computer_response": "Yes, you can still get a first class even with a carryover — but the margin is tight. Here's what the numbers say:\n\n📊 Your current standing:\n• CGPA: 4.42 across 108 units (477.36 quality points)\n• Remaining: 36 units\n\n⚠️ Worst-case scenario you can absorb:\n• You can afford a C in one 2-unit course and still maintain a 4.50+ CGPA, provided you get A's in everything else.\n• That gives you 176 quality points from 36 units → final CGPA of 4.54.\n\n💡 Strategy:\n• If you're worried, consider registering for a few extra elective units to give yourself more room. More units at grade A can offset a bad grade.\n\nSo yes — one carryover won't end your first class dream, but you don't have room for multiple slips.",
+        "computer_task": null
+      }
+    ]
+  },
+  {
+    "section": "Portal Navigator (MCP)",
+    "prompts": [
+      {
+        "id": "portal_1",
+        "user_prompt": "Help me register my courses for this semester.",
+        "computer_response": null,
+        "computer_task": {
+          "action": "course_registration",
+          "description": "The AI agent connects to the student portal via MCP, verifies that the student has met the minimum fee payment requirement, retrieves the list of compulsory courses for the student's department, level, and semester, then asks the student which electives they'd like to add. After the student confirms their selection, the agent submits the registration on the portal.",
+          "steps": [
+            "Connect to student portal via MCP",
+            "Check fee payment status — confirm minimum ₦70,000 has been paid",
+            "Fetch compulsory courses for the student's programme, level, and semester",
+            "Display the compulsory courses to the student",
+            "Ask the student to pick their preferred electives from the available list",
+            "Submit the full course list (compulsory + chosen electives) on the portal",
+            "Confirm successful registration"
+          ],
+          "final_response": "Done! ✅ I've successfully registered your courses for this semester. Here's a summary of what was registered:\n\n📋 Compulsory courses: 5 courses (18 units)\n📋 Electives: 2 courses (6 units)\n📊 Total: 7 courses, 24 units\n\nPlease check your portal to confirm everything looks correct. Would you like me to download your course form as well?"
+        }
+      },
+      {
+        "id": "portal_2",
+        "user_prompt": "Help me ballot for Moremi Hostel when the portal for balloting is open.",
+        "computer_response": null,
+        "computer_task": {
+          "action": "hostel_ballot_scheduling",
+          "description": "The AI agent acknowledges the student's request, confirms the preferred hostel (Moremi), and sets up a monitoring task to watch the student portal for when the accommodation balloting window opens. Once it detects the window is open, it will automatically ballot for Moremi on the student's behalf.",
+          "steps": [
+            "Confirm preferred hostel: Moremi Hall",
+            "Verify student eligibility for balloting (fee payment status, student status)",
+            "Set up a portal monitoring task to watch for the balloting window to open",
+            "When the window opens, automatically submit ballot for Moremi Hall",
+            "Notify the student of the ballot result"
+          ],
+          "final_response": "Got it! 🏠 I've noted your preference for Moremi Hall. Here's what will happen:\n\n• I'll keep monitoring the portal for when the accommodation balloting window opens.\n• The moment it goes live, I'll automatically ballot for Moremi Hall on your behalf.\n• I'll notify you immediately with the result — whether you got a space or not.\n\nYou don't need to do anything else. I've got you covered!"
+        }
+      },
+      {
+        "id": "portal_3",
+        "user_prompt": "Can you download my course registration form and my docket for me?",
+        "computer_response": null,
+        "computer_task": {
+          "action": "document_download",
+          "description": "The AI agent connects to the student portal via MCP, navigates to the documents section, downloads both the course registration form (course form) and the examination docket, and provides them to the student as downloadable files.",
+          "steps": [
+            "Connect to student portal via MCP",
+            "Navigate to the 'Course Registration' section",
+            "Download the course registration form as PDF",
+            "Navigate to the 'Examination Docket' section",
+            "Download the docket as PDF",
+            "Return both files to the student"
+          ],
+          "final_response": "Here you go! 📄 I've downloaded both documents from your portal:\n\n1. ✅ Course Registration Form — lists all your registered courses for this semester.\n2. ✅ Examination Docket — your exam schedule with dates, times, and venues.\n\nBoth files are ready for you to view or print. Is there anything else you need?"
+        }
+      }
+    ]
+  }
+]
