@@ -14,10 +14,22 @@ export default function Chat({ onLogout }) {
   const playingRef = useRef(false)
   const autoModeRef = useRef(false)                        // ref mirror for autoMode (no re-render lag)
   const textareaRef = useRef(null)
+  const typingPausedRef = useRef(false)
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
+
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.code === 'Space' && autoModeRef.current) {
+        e.preventDefault()
+        typingPausedRef.current = !typingPausedRef.current
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [])
 
   // ── STATE HELPERS ─────────────────────────────────────────
 
@@ -61,6 +73,7 @@ export default function Chat({ onLogout }) {
       if (Math.random() > 0.96)    ms += 400 + Math.random() * 300
 
       await sleep(ms)
+      while (typingPausedRef.current) await sleep(50)
       setInputValue(prev => prev + ch)
     }
 
