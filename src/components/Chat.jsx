@@ -26,7 +26,11 @@ export default function Chat({ onLogout }) {
   }
 
   function patchMsg(id, patch) {
-    setMessages(prev => prev.map(m => m.id === id ? { ...m, ...patch } : m))
+    setMessages(prev => prev.map(m => {
+      if (m.id !== id) return m
+      const updates = typeof patch === 'function' ? patch(m) : patch
+      return { ...m, ...updates }
+    }))
   }
 
   // ── AUTO-TYPE INTO INPUT FIELD ────────────────────────────
