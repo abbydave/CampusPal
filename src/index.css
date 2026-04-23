@@ -14,20 +14,17 @@
   --text-primary: #ececec;
   --text-secondary: #a0a0a0;
   --text-muted: #666;
-  --accent: #7c5cfc;
-  --accent-hover: #9175fd;
-  --accent-glow: rgba(124, 92, 252, 0.15);
-  --accent-soft: rgba(124, 92, 252, 0.08);
+  --accent: #DA7756;
+  --accent-hover: #E38B6C;
+  --accent-glow: rgba(218, 119, 86, 0.18);
+  --accent-soft: rgba(218, 119, 86, 0.1);
   --green: #22c55e;
   --yellow: #eab308;
   --red: #ef4444;
-  --user-bubble: #1c1c2e;
-  --user-bubble-border: #2d2d4a;
+  --user-bubble: #1e1a17;
+  --user-bubble-border: #332820;
   --thinking-bg: #111827;
   --thinking-border: #374151;
-  --section-rag: rgba(34, 197, 94, 0.08);
-  --section-cgpa: rgba(234, 179, 8, 0.08);
-  --section-mcp: rgba(124, 92, 252, 0.08);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -302,46 +299,6 @@ html, body, #root {
   line-height: 1.6;
 }
 
-/* ── SECTION DIVIDER ── */
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 0;
-}
-
-.section-divider-line {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.section-divider-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-}
-
-.section-divider.rag .section-divider-label {
-  background: var(--section-rag);
-  border-color: rgba(34, 197, 94, 0.2);
-  color: #22c55e;
-}
-.section-divider.cgpa .section-divider-label {
-  background: var(--section-cgpa);
-  border-color: rgba(234, 179, 8, 0.2);
-  color: #eab308;
-}
-.section-divider.mcp .section-divider-label {
-  background: var(--section-mcp);
-  border-color: rgba(124, 92, 252, 0.2);
-  color: #a78bfa;
-}
 
 /* ── MESSAGE ROW ── */
 .message-row {
@@ -603,9 +560,9 @@ html, body, #root {
 .doc-download-btn {
   padding: 6px 14px;
   background: var(--accent-soft);
-  border: 1px solid rgba(124, 92, 252, 0.3);
+  border: 1px solid rgba(218, 119, 86, 0.3);
   border-radius: 6px;
-  color: #a78bfa;
+  color: #E3886A;
   font-size: 12px;
   font-weight: 500;
   font-family: inherit;
@@ -615,8 +572,8 @@ html, body, #root {
 }
 
 .doc-download-btn:hover {
-  background: rgba(124, 92, 252, 0.15);
-  border-color: rgba(124, 92, 252, 0.5);
+  background: rgba(218, 119, 86, 0.15);
+  border-color: rgba(218, 119, 86, 0.5);
 }
 
 .doc-download-btn.downloading {
@@ -712,12 +669,6 @@ html, body, #root {
 .send-btn:active { transform: scale(0.94); }
 .send-btn:disabled { background: #333; cursor: not-allowed; }
 
-.input-hint {
-  text-align: center;
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 8px;
-}
 
 /* ── INLINE MARKDOWN ── */
 .ai-text ul, .ai-text ol {
