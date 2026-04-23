@@ -1,37 +1,50 @@
-# CampusPal — Problem & Solution Statements
+# Team FirstTimers
+
+**Deployment link:** https://claude-campus-pal.vercel.app/
+
+**Chat link:** https://claude.ai/share/bbf8cf79-80df-4c51-b45e-523a6befdc46
 
 ---
 
-## 01 — The Knowledge Gap: Students Can't Get Reliable Academic Information
+## Team
 
-### Problem
-
-UNILAG students make high-stakes academic decisions — course registration, unit loads, SIWES eligibility, graduation requirements — without access to reliable, digestible information. Official sources like faculty handbooks and senate regulations exist but are dense, scattered, and written in language most students won't sit through. The result? Students turn to WhatsApp groups, coursemates, and "scholars" whose advice is frequently wrong or incomplete. New students bear the worst of this, entering a complex system with no real guide. The problem isn't that the information doesn't exist — it's that no reliable, conversational interface to that information exists.
-
-### Solution — Knowledge Brain (RAG)
-
-A RAG-powered knowledge base ingests verified documents — faculty handbooks, senate regulations, departmental guides — and makes them conversationally accessible. Students ask questions in plain language and get precise, cited answers from official sources. No more WhatsApp group myths. No more guessing. One trusted interface that knows the rules and explains them clearly.
+- Abigail Sokenu
+- Omohuma Miracle
 
 ---
 
-## 02 — Academic Planning is Manual, Opaque, and Error-Prone
+## Problem
 
-### Problem
-
-Students have no reliable way to model their own academic trajectory. Questions like "Can I still graduate with a first class if I fail this course?", "How many units do I need next semester?", or "What's the best combination of courses to hit a 4.5?" require calculations most students can't do themselves. They depend on other students — who may be wrong — or they fly blind entirely. UNILAG's grading and credit system has enough complexity that small planning mistakes cascade into missed graduation windows or wasted semesters.
-
-### Solution — CGPA Simulator
-
-Students upload their transcript and run what-if scenarios against UNILAG's exact grading system. "If I carry over GST 201, can I still graduate?" "How many A's do I need for a first class?" "Can I afford a B in this course?" The simulator handles all the permutations and surfaces the answers instantly — no scholar needed.
+UNILAG students navigate high-stakes academic decisions — course registration, CGPA planning, fee payments, portal tasks — without a reliable guide. Official information is scattered and dense. The student portal is unintuitive and punishing during peak periods. Students rely on WhatsApp groups and coursemates for advice that is frequently wrong. There is no intelligent, conversational layer between the student and the complex systems they depend on to succeed.
 
 ---
 
-## 03 — The Student Portal is a Hostile, High-Risk Experience
+## Solution
 
-### Problem
+CampusPal is an AI-powered academic assistant for UNILAG students, built on three core capabilities:
 
-The UNILAG portal is the single gateway to course registration, fee payment, and academic records — but it's complex, unintuitive, and punishing during peak periods. Students who don't know the exact sequence of steps make errors that lock them out of registration or cause them to miss deadlines. There is no guardrail, no guidance, and no intelligent layer between the student and the raw portal UI. A student shouldn't need to already know how the portal works just to use it.
+- **Knowledge Brain (RAG)** — answers academic policy questions in plain language from verified official documents (faculty handbooks, senate regulations, departmental guides). No more myths from the group chat.
+- **CGPA Simulator** — lets students run what-if scenarios against UNILAG's exact grading system: first class projections, carryover impact, optimal course loads.
+- **Portal Navigator (MCP)** — an intelligent agent that handles the student portal on the student's behalf: course registration, hostel balloting, document downloads, and more — all through a simple conversation.
 
-### Solution — Portal Navigator (MCP)
+---
 
-An MCP server sits between the student and the portal, acting as an intelligent agent. A student says "I want to pay 30k of my school fees" and the assistant explains the 50% minimum rule before they make a mistake. A student says "register my courses" and the assistant checks their fee status, lists compulsory courses, asks for elective preferences, registers everything, and confirms via email. The portal stops being a minefield and becomes a conversation.
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+```bash
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
+```
