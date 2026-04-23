@@ -4,6 +4,8 @@
 
 **Chat link:** https://claude.ai/share/bbf8cf79-80df-4c51-b45e-523a6befdc46
 
+**Recorded Demo:** https://youtu.be/zxb7qcjsTgg
+
 ---
 
 ## Team
